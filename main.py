@@ -110,13 +110,13 @@ for dialogue in dialogues:
 
 # Uncomment the next lines to get multiwoz restaurant domain evaluation
 # REQUIRES RESTAURANT MODEL RUNING
-# d = dialogues[1]
-# for u in d["utterances"]:
-#     if u["speaker"] == "ASSISTANT":
-#         continue
-#     else:
-#         res = requests.post("http://localhost:5005/model/parse", json={"text": u["text"]})
-#         print(res.text, "\n")
+d = dialogues[1]
+for u in d["utterances"]:
+    if u["speaker"] == "ASSISTANT":
+        continue
+    else:
+        res = requests.post("http://localhost:5005/model/parse", json={"text": u["text"]})
+        print(res.text, "\n")
 
 
 with open("..\\TaskmasterToRasa\\Model\\data\\nlu.yml", "w") as f:
